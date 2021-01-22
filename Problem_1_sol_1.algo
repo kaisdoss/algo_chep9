@@ -1,0 +1,36 @@
+ALGORITHM Checkpoint Linear Data Structures (sol 1)
+VAR
+     set1, set2 : ARRAY_OF INTEGER[20];
+    i,j,sum,sum1,sum2 :INTEGER ;
+BEGIN
+    FOR i FROM 0 TO 19 STEP 1  DO
+        write("ENTER THE NUMBERS OF SET1" i++ ":" );
+        read(set1[i]);
+    END_FOR
+     FOR j FROM 0 TO 19 STEP 1  DO
+        write("ENTER THE NUMBERS OF SET2" j++ ":" );
+        read(set2[j]);
+    END_FOR
+
+    sum1:=0
+    FOR i FROM 0 TO 19 STEP 1  DO
+        IF (set1[i]<>set2[j]) THEN
+            sum1:=set1[i]=set2[j] ;
+        ELSE
+            i:=i+1
+        END_IF
+    END_FOR
+
+    sum2:=0
+    FOR j FROM 0 TO 19 STEP 1  DO
+        IF (set2[j]<>set1[i]) THEN
+            sum2:=set1[i]=set2[j];
+        ELSE
+            j:=j+1 ;
+        END_IF
+    END_FOR
+    sum:=sum1+sum2;
+    write("the sum of distinct elements:"sum);
+END
+HASH_TABLE<Key_type,Value_type>
+

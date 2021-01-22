@@ -1,0 +1,40 @@
+ALGORITHM Hash_Tables_Prob_2
+VAR
+    htab: HASH_TABLE<INTEGER,INTEGER>;
+    set1, set2 : ARRAY_OF INTEGER[20];
+    key, count, i, j: INTEGER;
+BEGIN
+    FOR i FROM 0 TO (set1.length -1) STEP 1  DO
+        write("ENTER THE NUMBERS OF SET1" i++ ":" );
+        read(set1[i]);
+    END_FOR
+     FOR j FROM 0 TO (set2.length -1) STEP 1  DO
+        write("ENTER THE NUMBERS OF SET2" j++ ":" );
+        read(set2[j]);
+    END_FOR
+
+    FOR i FROM 0 TO (set1.length -1) STEP step 1 DO
+        IF (htab.lookup(set1[i])= false ) THEN
+            count := htab.get(set1[i]);
+            htab.insert(set1[i],count+1);
+        ELSE
+            htab.insert(set1[i],1);
+        END_IF
+    END_FOR
+    FOR i FROM 0 TO (set2.length -1) STEP step 1 DO
+        IF (htab.lookup(set2[i])= false ) THEN
+            count := htab.get(set2[i]);
+            htab.insert(set2[i],count+1);
+        ELSE
+            htab.insert(set2[i],1);
+        END_IF
+    END_FOR 
+        key := htab.get(Key(2))+htab.get(Key(3))+htab.get(Key(4))+htab.get(Key(5)); the key there   
+//I couldn't find a way to put everything that is different of get(Key(1)) lol -.-
+
+        sum := sum + key;
+
+        write("the sum of Common elements :"sum);
+
+
+END
